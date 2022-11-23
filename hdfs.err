@@ -1,0 +1,100 @@
+sh: /home/work/dongzhe05/hadoop-client-heng/hadoop/bin/hadoop: No such file or directory
+sh: /home/work/dongzhe05/hadoop-client-heng/hadoop/bin/hadoop: No such file or directory
+sh: /home/work/dongzhe05/hadoop-client-heng/hadoop/bin/hadoop: No such file or directory
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+22/11/03 17:14:00 INFO common.UpdateService: ZkstatusUpdater to yq01-heng-hdfs.dmop.baidu.com:54310 started
+22/11/03 17:14:00 INFO hdfs.FMSClient: Write blk_15199654058127148_5200955888 in pipeline 10.90.110.12:7001, 10.90.163.30:7001, 10.90.163.44:7001
+22/11/03 17:16:01 INFO common.UpdateService: ZkstatusUpdater to yq01-heng-hdfs.dmop.baidu.com:54310 started
+put: 
+java.io.IOException: Target /app/ssg/nlp/uu/dongzhe05/graphtrans/configs/base_hiv_mlp.yml already exists
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:482)
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:480)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:296)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:258)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:1953)
+	at org.apache.hadoop.fs.FsShell.copyFromLocal(FsShell.java:166)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:2196)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:2353)
+22/11/03 17:19:19 INFO common.UpdateService: ZkstatusUpdater to yq01-heng-hdfs.dmop.baidu.com:54310 started
+put: 
+java.io.IOException: Target /app/ssg/nlp/uu/dongzhe05/graphtrans/configs/base_hiv_mlp.yml already exists
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:482)
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:480)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:296)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:258)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:1953)
+	at org.apache.hadoop.fs.FsShell.copyFromLocal(FsShell.java:166)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:2196)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:2353)
+22/11/03 17:21:52 INFO common.UpdateService: ZkstatusUpdater to yq01-heng-hdfs.dmop.baidu.com:54310 started
+put: 
+java.io.IOException: Target /app/ssg/nlp/uu/dongzhe05/graphtrans/configs/base_hiv_mlp.yml already exists
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:482)
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:480)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:296)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:258)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:1953)
+	at org.apache.hadoop.fs.FsShell.copyFromLocal(FsShell.java:166)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:2196)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:2353)
+22/11/03 17:22:16 INFO common.UpdateService: ZkstatusUpdater to yq01-heng-hdfs.dmop.baidu.com:54310 started
+put: 
+java.io.IOException: Target /app/ssg/nlp/uu/dongzhe05/graphtrans/configs/base_hiv_mlp.yml already exists
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:482)
+	at org.apache.hadoop.fs.FileUtil.checkDest(FileUtil.java:480)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:296)
+	at org.apache.hadoop.fs.FileUtil.copy(FileUtil.java:258)
+	at org.apache.hadoop.fs.FileSystem.copyFromLocalFile(FileSystem.java:1953)
+	at org.apache.hadoop.fs.FsShell.copyFromLocal(FsShell.java:166)
+	at org.apache.hadoop.fs.FsShell.run(FsShell.java:2196)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.fs.FsShell.main(FsShell.java:2353)
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够
+sh: /root/paddlejob/hadoop-client/hadoop/bin/hadoop: 权限不够

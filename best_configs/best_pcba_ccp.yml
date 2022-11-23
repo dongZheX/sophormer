@@ -1,0 +1,38 @@
+aug: baseline
+dataset: ogbg-molpcba
+fs_name: hdfs://yq01-heng-hdfs.dmop.baidu.com:54310
+fs_ugi: nlp,hello123
+hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
+
+batch_size: 256
+lr: 0.0006436157673401852
+optimizer: adamw
+runs: 1
+scheduler: cosine
+seed: 12344
+start-eval: 1
+
+d_model: 256
+gnn_JK: sum
+gnn_dropout: 0.24421359024209505
+gnn_emb_dim: 512
+gnn_num_layer: 6
+gnn_residual: true
+gnn_type: gin
+gnn_virtual_node: true
+graph_pooling: ccp
+model_type: so_gnn-transformer
+num_encoder_layers: 2
+transformer_norm_input: true
+
+cfeat_drop: 0
+cheads: 1
+final_dropout: 0.1334847001443107
+is_triu: true
+last_bn: false
+reduction_list: '64'
+use_bn: true
+
+
+
+

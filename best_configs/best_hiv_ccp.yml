@@ -1,0 +1,43 @@
+aug: baseline
+dataset: ogbg-molhiv
+fs_name: hdfs://yq01-heng-hdfs.dmop.baidu.com:54310
+fs_ugi: nlp,hello123
+hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
+
+
+lr: 0.0006872792487148982
+batch_size: 256
+optimizer: momentum
+start-eval: 1
+runs: 1
+scheduler: onecycle
+seed: 12344
+
+
+d_model: 64
+gnn_JK: sum
+gnn_dropout: 0.28592259099640716
+gnn_emb_dim: 256
+gnn_num_layer: 5
+gnn_residual: true
+gnn_type: gin
+gnn_virtual_node: false
+graph_pooling: ccp
+model_type: so_gnn-transformer
+num_encoder_layers: 2
+
+
+cfeat_drop: 0.3
+cheads: 2
+is_triu: true
+last_bn: false
+final_dropout: 0.5658639981981121
+reduction_list: '128'
+transformer_norm_input: true
+use_bn: true
+
+
+
+
+# val>test
+

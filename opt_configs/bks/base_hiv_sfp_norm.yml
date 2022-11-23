@@ -1,0 +1,34 @@
+dataset: ogbg-molhiv
+aug: baseline
+model_type: sf_gnn-transformer
+gnn_type: gin
+gnn_virtual_node: false
+graph_pooling: sfp
+runs: 1
+seed: 12344
+batch_size: 256
+lr: 0.001
+start-eval: 1
+scheduler: plateau
+gnn_residual: true
+optimizer: momentum
+gnn_emb_dim: 300
+transformer_norm_input: true
+gnn_dropout: 0.3
+gnn_JK: cat
+# fix_triu: false
+sf_type: "MGCrP"
+fuse_type: "sum_fc"
+remove_mean: false
+sfheads: 4
+wr_dim: 24
+num_encoder_layers: 4
+norm_type: "svPN"
+n_alpha: 0.5
+iterNum: 1
+svNum: 1
+regular: 0.5
+
+hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
+fs_name: "hdfs://yq01-heng-hdfs.dmop.baidu.com:54310"
+fs_ugi: "nlp,hello123"

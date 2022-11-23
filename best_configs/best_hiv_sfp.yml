@@ -1,0 +1,42 @@
+aug: baseline
+dataset: ogbg-molhiv
+fs_name: hdfs://yq01-heng-hdfs.dmop.baidu.com:54310
+fs_ugi: nlp,hello123
+hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
+
+
+batch_size: 256
+lr: 0.0044487866574315985
+model_type: sf_gnn-transformer
+optimizer: momentum
+runs: 1
+scheduler: cosine
+seed: 12344
+start-eval: 1
+
+gnn_JK: sum
+d_model: 128
+gnn_dropout: 0.4052670748940775
+gnn_emb_dim: 768
+gnn_num_layer: 3
+graph_pooling: sfp
+gnn_residual: true
+gnn_type: gin
+gnn_virtual_node: false
+num_encoder_layers: 1
+transformer_norm_input: true
+
+
+fuse_type: concat
+iterNum: 2
+n_alpha: 0.4476653650035603
+norm_type: sqrt_d
+regular: 0.6141745992379757
+remove_mean: false
+sf_type: MGCrP
+sfheads: 4
+svNum: 1
+wr_dim: 16
+
+
+# cdropoout not setting 

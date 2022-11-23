@@ -1,0 +1,29 @@
+dataset: ogbg-molhiv
+aug: baseline
+model_type: so_gnn-transformer
+gnn_type: gin
+gnn_virtual_node: false
+graph_pooling: ccp
+runs: 1
+seed: 12344
+batch_size: 256
+lr: 0.001
+start-eval: 1
+scheduler: cosine
+gnn_residual: true
+optimizer: momentum
+
+transformer_norm_input: true
+gnn_dropout: 0.3
+gnn_JK: last
+
+fix_triu: false
+reduction_list: [64, 32]
+cheads: 1
+use_weight: true
+is_triu: true
+use_bn: true
+last_bn: false
+cattn_drop: 0
+cfeat_drop: 0
+num_encoder_layers: 1

@@ -1,0 +1,36 @@
+aug: baseline
+dataset: NCI1
+fs_name: hdfs://yq01-heng-hdfs.dmop.baidu.com:54310
+fs_ugi: nlp,hello123
+hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
+
+batch_size: 256
+lr: 0.002731736268614753
+optimizer: adamw
+runs: 1
+scheduler: onecycle
+seed: 12344
+
+gnn_JK: sum
+gnn_dropout: 0.25496681926050596
+gnn_emb_dim: 512
+gnn_num_layer: 4
+gnn_residual: true
+gnn_type: gin
+gnn_virtual_node: false
+graph_pooling: sfp
+d_model: 128
+model_type: sf_gnn-transformer
+num_encoder_layers: 3
+transformer_norm_input: true
+
+fuse_type: concat
+iterNum: 1
+n_alpha: 0.5589985078200919
+norm_type: sqrt_d
+sf_type: MGCrP
+sfheads: 1
+regular: 0.4824917318709558
+remove_mean: true
+svNum: 1
+wr_dim: 64
