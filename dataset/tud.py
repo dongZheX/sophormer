@@ -9,10 +9,10 @@ from torch_geometric.datasets import TUDataset
 from torch_geometric.utils import degree
 from tqdm import tqdm
 import torch_geometric.transforms as T
+from sklearn.model_selection import StratifiedKFold
 
 
-
-class TUUtil:
+class TUUtil_v2:
     @staticmethod
     def add_args(parser):
         parser.set_defaults(batch_size=128)
@@ -61,24 +61,27 @@ class TUUtil:
                 mean, std = deg.mean().item(), deg.std().item()
                 dataset.transform = NormalizedDegree(mean, std)
         num_tasks = dataset.num_classes
-
         num_features = dataset.num_features
+        skf = StratifiedKFold(10, shuffle=True, random_state=12345)
+        test_indices, train_indices = [], []
+        for _, idx in skf.split(torch.zeros(len(dataset)), dataset.data.y):
+            test_indices.append(torch.from_numpy(idx).to(torch.long))
 
-        num_training = int(len(dataset) * 0.8)
-        num_val = int(len(dataset) * 0.1)
-        num_test = len(dataset) - (num_training + num_val)
-        training_set, validation_set, test_set = random_split(dataset, [num_training, num_val, num_test])
-
+        for i in range(10):
+            train_mask = torch.ones(len(dataset), dtype=torch.bool)
+            train_mask[test_indices[i]] = 0
+            train_indices.append(train_mask.nonzero(as_tuple=False).view(-1))
+        train_data = [dataset[ind] for ind in train_indices]
+        test_data = [dataset[ind] for ind in test_indices]
         class Dataset(dict):
             pass
 
-        dataset = Dataset({"train": training_set, "valid": validation_set, "test": test_set})
+        dataset = Dataset({"train": train_data, "test": test_data})
         dataset.eval_metric = "acc"
         dataset.task_type = "classification"
-        dataset.get_idx_split = lambda: {"train": "train", "valid": "valid", "test": "test"}
+        dataset.get_idx_split = lambda: {"train": "train","test": "test"}
 
         node_encoder_cls = lambda: nn.Linear(num_features, args.gnn_emb_dim)
-
         def edge_encoder_cls(_):
             def zero(_):
                 return 0
@@ -89,7 +92,7 @@ class TUUtil:
 
 
 # ZINC 先行放过
-class TUUtil_v2:
+class TUUtil:
     @staticmethod
     def add_args(parser):
         parser.set_defaults(batch_size=128)

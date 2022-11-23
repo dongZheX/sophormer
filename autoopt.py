@@ -20,19 +20,21 @@ def objective(trial):
     cfg['scheduler']= trial.suggest_categorical('scheduler',['cosine', "onecycle"])
 
     # 128 is good generally, but also need be optimized
+    dim_scope = [64, 32] if "mpn" in args.model else [128, 64]
     cfg['d_model'] = trial.suggest_categorical("d_model", [128, 64])
 
     # Default
     cfg['num_encoder_layers'] = trial.suggest_categorical('num_encoder_layers',[1,2,3,4])
     
     # Default
-    cfg['gnn_num_layer'] = trial.suggest_categorical('gnn_num_layer',[3,4,5,6])
+    cfg['gnn_num_layer'] = trial.suggest_categorical('gnn_num_layer',[2,3,4,5,6])
 
     # Fixed Settings
     cfg['gnn_virtual_node'] = True if "pcba" in dataset else False
     
     # need to be optimized. Generally, higher, better
-    cfg['gnn_emb_dim'] = trial.suggest_categorical('gnn_emb_dim',[128, 256, 300, 512, 768])
+    dim_scope = [64, 32, 128] if "IMDB" in args.dataset or "MUTAG" in args.dataset else [128, 256, 300, 512, 768]
+    cfg['gnn_emb_dim'] = trial.suggest_categorical('gnn_emb_dim', dim_scope)
 
     # need to be optimizerd, Generally, better, 
     cfg['gnn_dropout'] = trial.suggest_loguniform("gnn_dropout", 0.1, 0.5)

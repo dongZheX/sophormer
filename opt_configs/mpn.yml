@@ -4,7 +4,7 @@ fs_name: hdfs://yq01-heng-hdfs.dmop.baidu.com:54310
 fs_ugi: nlp,hello123
 hadoop_bin: /root/paddlejob/hadoop-client/hadoop/bin/hadoop
 
-batch_size: 256
+batch_size: 64
 lr: 0.0033727508637845655
 model_type: sf_gnn-transformer
 optimizer: adamw
