@@ -43,7 +43,10 @@ class SOGNNTransformer(BaseModel):
         group.add_argument("--fix_epochs", type=int, default=0)
         group.add_argument("--freeze_type", type=str,default="all")
         group.add_argument("--num_ccp", type=int, default=1)
-        # group.add_argument("--pos_ccp_add", type=str, default="before") 感觉没区别
+
+        group.add_argument("--sqrt_d", action="store_true", default=False)
+        group.add_argument("--fuse_type", type=str)
+        group.add_argument("--fuse_alpha", type=float, default=1)
         
     @staticmethod
     def name(args):
@@ -91,22 +94,26 @@ class SOGNNTransformer(BaseModel):
         self.graph_pred_linear_list = torch.nn.ModuleList()
         self.max_seq_len = args.max_seq_len
         self.pretrained_gnn = args.pretrained_gnn
+        self.fuse_type = args.fuse_type
+        self.fuse_alpha = args.fuse_alpha
+        self.sqrd_d = args.sqrt_d
         if self.pooling == "ccp":
             self.pools = nn.Sequential()
             for i in range(args.num_ccp):
                 pool = MultiHeadSOP(
                     hidden_channels=args.d_model, 
-                    reduction_list=args.reduction_list,
+                    reduction_list= args.reduction_list,
                     is_triu=args.is_triu,
                     cheads=args.cheads,
                     use_bn=args.use_bn,
                     last_bn=args.last_bn,
                     cfeat_drop=args.cfeat_drop,
-                    args=None,
+                    args=args,
                     mlp_dropout=args.mlp_dropout,
+                    num_classes=self.num_tasks,
                 )
                 self.pools.append(pool)
-            d = args.reduction_list[-1] // args.cheads
+            d = pool.d_h
             output_dim = d*d if not args.is_triu else d * (d+1)//2
             output_dim = output_dim * args.cheads
         if args.max_seq_len is None:
@@ -186,6 +193,8 @@ class SOGNNTransformer(BaseModel):
             h_graph = 0
             for pool in self.pools:
                 h_graph += pool(gnn_unpad, batched_data.batch)
+            if self.fuse_type is not None:
+                return h_graph
         else:
             raise NotImplementedError
 

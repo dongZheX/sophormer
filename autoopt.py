@@ -44,6 +44,7 @@ def objective(trial):
     # dataset need be indicated, ogbg-mol*, NCI, NCI109, MUTAG, IMDB-B, IMDB-M and so on
     cfg['dataset'] = dataset
 
+    # 参数调整还得改 啊啊啊啊啊啊啊啊啊啊啊
     if model == "ccp":
         cfg['cheads'] = trial.suggest_categorical('cheads',[1,2,4])
         target = trial.suggest_categorical("target", [64, 32, 16])

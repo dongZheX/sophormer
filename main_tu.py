@@ -82,7 +82,7 @@ def main():
     group.add_argument('--factor', type=float, default=0.5)
     group.add_argument('--runs', type=int, default=1)
     group.add_argument('--test-freq', type=int, default=1)
-    group.add_argument('--start-eval', type=int, default=15)
+    group.add_argument('--start-eval', type=int, default=1)
     group.add_argument('--resume', type=str, default=None)
     group.add_argument('--seed', type=int, default=None)
     group.add_argument('--optimizer', type=str, default="adamw")
@@ -236,7 +236,7 @@ def main():
                 if args.save_model:
                     torch.save(state_dict, os.path.join(args.save_path, str(run_id), "last_model.pt"))
                     logger.info("[Save] Save model: {}", os.path.join(args.save_path, str(run_id), "last_model.pt"))
-                if best_val < test_metric:
+                if best_val < test_metric or epoch == args.epoch:
                     best_val = test_metric
                     final_test = test_metric
                     torch.save(state_dict, os.path.join(args.save_path, str(run_id), "best_model.pt"))
