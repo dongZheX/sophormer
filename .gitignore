@@ -27,11 +27,10 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-auto_configs
 bk
-data
-exps
-pretrain
+data/__pycache__
+data/ogb
+data/tmp
 sqlite
 temp*
 # PyInstaller

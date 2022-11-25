@@ -101,7 +101,7 @@ def main():
     train = trainer.train
     model_cls = get_model_and_parser(args, parser)
     args = parser.parse_args()
-    # 一般是None
+    # None
     data_transform = trainer.transform(args)
     run_name = args.run_name
     
